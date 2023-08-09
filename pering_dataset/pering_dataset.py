@@ -90,6 +90,8 @@ class PeringDataset(Dataset):
     def __len__(self):
         return len(self.gt_data)
 
+    def file(self, idx):
+        return self.gt_data["filenames"].iloc[idx]
 
     def __getitem__(self, idx):
         if type(idx) == int:
